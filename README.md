@@ -2,6 +2,8 @@
 
 **Measuring irreducible structure beyond entropy**
 
+Status: Experimental v0.1. This repository provides falsifiable, minimal estimators for informational irreducibility beyond entropy.
+
 ---
 Quick Start (30 seconds)
 This project measures structure that survives entropy.
