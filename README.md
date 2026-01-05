@@ -3,6 +3,20 @@
 **Measuring irreducible structure beyond entropy**
 
 ---
+Quick Start (30 seconds)
+This project measures structure that survives entropy.
+Install dependencies
+pip install -r requirements.txt
+Run analysis on a sample signal
+from inertia import analyze
+result = analyze("inertia/data/example_signal.csv")
+print("Entropy:", result.entropy)
+print("I_bar:", result.I_bar)
+print("I_comp:", result.I_comp)
+result.plot()
+Expected behavior:
+Random noise → high entropy, low I
+Structured signals → lower entropy, higher I
 
 ## Overview
 
@@ -21,6 +35,16 @@ This project provides:
 No prior commitment to any broader theoretical framework is required to use or evaluate this software.
 
 ---
+When Informational Inertia Fails
+Informational Inertia is not a universal structure detector.
+Known limitations:
+Purely random noise may exhibit nonzero I_comp due to compression artifacts
+Highly nonlinear but trivial signals may score high irreducibility under linear detrending
+Estimators are representation-dependent (scaling, encoding, discretization matter)
+I does not imply semantic meaning, causality, or usefulness
+Adversarial constructions can inflate I without genuine structure
+This repository intentionally includes tests designed to break Informational Inertia.
+If I fails to add explanatory power beyond entropy or compression alone, that failure should be demonstrable using this code.
 
 ## What Informational Inertia Is
 
