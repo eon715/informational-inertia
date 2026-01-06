@@ -137,3 +137,16 @@ from inertia import analyze
 result = analyze("data/example_signal.csv")
 print(result.I_bar)
 result.plot()
+
+## Quick example
+
+```python
+import numpy as np
+from inertia.analyze import analyze
+
+x = np.sin(np.linspace(0, 10*np.pi, 2000))
+np.savetxt("signal.csv", x, delimiter=",")
+
+r = analyze("signal.csv")
+print(r.I_bar, r.I_comp, r.entropy)
+r.plot()
